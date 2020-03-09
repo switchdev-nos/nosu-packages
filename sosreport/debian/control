@@ -1,0 +1,25 @@
+Source: sosreport
+Maintainer: Louis Bouchard <louis.bouchard@ubuntu.com>
+Uploaders: Eric Desrochers <slashd@ubuntu.com>
+Section: admin
+Priority: optional
+Standards-Version: 4.5.0
+Build-Depends:
+ debhelper-compat,
+ dh-python,
+ gettext,
+ python3-all,
+ python3-nose,
+ python3-six,
+Homepage: https://github.com/sosreport/sos
+Vcs-Browser: https://salsa.debian.org/sosreport-team/sosreport
+Vcs-Git: https://salsa.debian.org/sosreport-team/sosreport.git
+
+Package: sosreport
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, python3-six
+Description: Set of tools to gather troubleshooting data from a system
+ Sos is a set of tools that gathers information about system
+ hardware and configuration. The information can then be used for
+ diagnostic purposes and debugging. Sos is commonly used to help
+ support technicians and developers.

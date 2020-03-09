@@ -1,0 +1,6 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@mellanox.com"
+
+PKG_SOSREPORT_GIT="https://github.com/kvadrage/sos"
+PKG_SOSREPORT_GIT_BRANCH="alex-devel"

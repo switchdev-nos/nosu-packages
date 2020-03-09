@@ -1,0 +1,6 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@mellanox.com"
+
+PKG_VRF_GIT="https://github.com/kvadrage/vrf"
+#PKG_VRF_GIT_BRANCH=""

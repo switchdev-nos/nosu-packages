@@ -1,0 +1,5 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@mellanox.com"
+
+PKG_IFUPDOWN2_GIT="https://github.com/CumulusNetworks/ifupdown2"

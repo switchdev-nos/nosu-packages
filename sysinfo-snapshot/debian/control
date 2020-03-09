@@ -1,0 +1,15 @@
+Source: sysinfo-snapshot
+Section: net
+Priority: optional
+Maintainer: Alexander Petrovskiy <alexpe@mellanox.com>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: https://github.com/Mellanox/linux-sysinfo-snapshot
+
+Package: sysinfo-snapshot
+Architecture: all
+Depends: ${misc:Depends}, python (>=2.7)
+Description: Mellanox Sysinfo Snapshot for Linux
+             Automated sysinfo-snapshot tool is designed to take a snapshot
+             of all the configuration and relevant information on the server
+             and Mellanox's adapters or switches

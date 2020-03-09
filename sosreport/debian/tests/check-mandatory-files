@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+
+import sys
+import os
+import unittest
+import subprocess
+import glob
+
+
+class SosTest(unittest.TestCase):
+    '''Verify the presence of mandatory dir/files'''
+
+    def setUp(self):
+        #  This supposes that sosreport has run at least once
+        self.tarball = glob.glob("/tmp/*md5")[0].strip(".md5")
+        self.tarfile = self.tarball.lstrip('/tmp/').split('.')[0]
+        try:
+            subprocess.check_call(['tar', 'xf', self.tarball])
+        except CalledProcessError as err:
+            print("Unable to extract tarball : {}".format(err))
+
+    def test_ref_file_present(self):
+            self.assertTrue(os.path.exists('debian/tests/mandatory-files'))
+
+    def test_mandatory_files(self):
+        with open('debian/tests/mandatory-files', 'r') as file:
+            for line in file:
+                if line.startswith('#'):
+                    continue
+                print('checking {}'.format(line.strip()))
+                self.assertTrue(os.path.exists('{}/{}'.format(self.tarfile,line.strip())))
+
+if __name__ == '__main__':
+    unittest.main(testRunner=unittest.TextTestRunner(stream=sys.stdout,
+                                                     verbosity=2))

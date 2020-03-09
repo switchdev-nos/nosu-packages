@@ -1,0 +1,6 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@mellanox.com"
+
+PKG_HW_MGMT_GIT="https://github.com/Mellanox/hw-mgmt"
+PKG_HW_MGMT_GIT_BRANCH="V.7.0000.3012"

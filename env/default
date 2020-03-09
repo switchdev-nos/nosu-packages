@@ -1,0 +1,10 @@
+
+NOSU_PACKAGES=(
+  iproute2
+  ifupdown2
+  vrf
+  sosreport
+  hw-mgmt
+  mlnx-tools
+  sysinfo-snapshot
+)

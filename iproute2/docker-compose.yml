@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-iproute2:
+    build: ./
+    image: nosu-pkg-iproute2
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/env/default" ]

@@ -1,0 +1,28 @@
+Description: Fix unittest for py3 only default system
+ Otherwise 2 tests fails as follows:
+ ======================================================================
+ FAIL: test_output (utilities_tests.ExecutableTest)
+ ----------------------------------------------------------------------
+ Traceback (most recent call last):
+ File "/tmp/sos/tests/utilities_tests.py", line 62, in test_output
+ self.assertEquals(result['status'], 0)
+ AssertionError: 127 != 0
+
+ ======================================================================
+ FAIL: test_shell_out (utilities_tests.ExecutableTest)
+----------------------------------------------------------------------
+ Traceback (most recent call last):
+ File "/tmp/sos/tests/utilities_tests.py", line 80, in test_shell_out
+ self.assertEquals("executed\n", shell_out(path))
+ AssertionError: 'executed\n' != ''
+ - executed
+
+Author: Eric Desrochers <slashd@ubuntu.com>
+--- sos-3.9.orig/tests/test_exe.py
++++ sos-3.9/tests/test_exe.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ print("executed")
+ 
+ # vim: set et ts=4 sw=4 :

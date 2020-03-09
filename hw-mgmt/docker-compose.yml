@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-hw-mgmt:
+    build: ./
+    image: nosu-pkg-hw-mgmt
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/env/default" ]

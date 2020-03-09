@@ -1,0 +1,64 @@
+From 822d14ba2a9e459725c33a582e7f8b10fd095ee7 Mon Sep 17 00:00:00 2001
+From: Petr Machata <petrm@mellanox.com>
+Date: Thu, 28 Nov 2019 16:05:14 +0200
+Subject: [PATCH 2/3] mlnx_qos: Allow repeating the --dscp2prio command
+
+Make it possible to repeat the command several times to perform several
+actions in one go. This reduces the time needed to configure a system.
+
+Signed-off-by: Petr Machata <petrm@mellanox.com>
+---
+ ofed_scripts/utils/mlnx_qos | 17 +++++++++++------
+ 1 file changed, 11 insertions(+), 6 deletions(-)
+
+diff --git a/ofed_scripts/utils/mlnx_qos b/ofed_scripts/utils/mlnx_qos
+index d545251..1c3e38d 100755
+--- a/ofed_scripts/utils/mlnx_qos
++++ b/ofed_scripts/utils/mlnx_qos
+@@ -98,6 +98,7 @@ parser.add_option("-d", "--dcbx", dest="dcbx",
+ parser.add_option("--trust", dest="trust",
+                   help="set priority trust state to pcp or dscp")
+ parser.add_option("--dscp2prio", dest="dscp2prio",
++		  action="append",
+                   help="set/del a (dscp,prio) mapping. Example 'set,30,2' maps dscp 30 to priority 2. " +
+                        "'del,30,2' deletes the mapping and resets the dscp 30 mapping back to the default setting priority 0.")
+ parser.add_option("--defltprio", dest="defltprio",
+@@ -426,25 +427,29 @@ if options.cable_len or options.pfc:
+ 		sys.exit(1)
+ 
+ # ********* dscp2prio command ******************************
++dscp2prio = []
+ if options.dscp2prio and options.trust:
+ 	print ("trust and dscp2prio commands cannot be used at the same time.")
+ 	sys.exit(1)
+ 
+ try:
+ 	if options.dscp2prio:
+-		action, dscp, prio = options.dscp2prio.split(",")
+-		dscp = int(dscp)
+-		prio = int(prio)
++		for opt in options.dscp2prio:
+ 
+-		if ((action != "set") and (action != "del")) or (dscp > 63) or (prio > 7):
+-			sys.exit(1)
++			action, dscp, prio = opt.split(",")
++			dscp = int(dscp)
++			prio = int(prio)
++
++			if ((action != "set") and (action != "del")) or (dscp > 63) or (prio > 7):
++				sys.exit(1)
++			dscp2prio.append((action, dscp, prio))
+ 
+ except:
+ 	print("Invalid dscp2prio command. Refer to the help.")
+ 	sys.exit(1)
+ 
+ try:
+-	if options.dscp2prio:
++	for action, dscp, prio in dscp2prio:
+ 		if action == "set":
+ 			if (is_trust_sysfs):
+ 				f = open(dscp2prio_path, "w")
+-- 
+2.17.1
+

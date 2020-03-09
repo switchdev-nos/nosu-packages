@@ -1,0 +1,6 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@mellanox.com"
+
+PKG_MLNX_TOOLS_GIT="https://github.com/Mellanox/mlnx-tools"
+PKG_MLNX_TOOLS_GIT_BRANCH="v4.6.3"

@@ -1,0 +1,7 @@
+Tests: sos-run-nonroot.py
+Depends: sosreport
+Restrictions: allow-stderr
+
+Tests: sos-run.py
+Depends: sosreport
+Restrictions: needs-root, allow-stderr

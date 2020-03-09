@@ -1,0 +1,54 @@
+sysinfo-snapshot (3.5.0) bionic; urgency=medium
+
+    * Upstream release 3.5.0
+
+ -- Alexander Petrovskiy <alexpe@mellanox.com>  Tue, 10 Mar 2020 01:27:23 +0300
+
+sysinfo-snapshot (3.4.0) bionic; urgency=medium
+
+    * General:
+
+    - Added --asap flag - Add Asap commands
+    - Added --asap_tc flag - Add Asap TC commands
+    - Added --fsdump flag - Fsdump Firmware dump flag
+    - Added --openstack flag - Add openstack files
+    - Added --no_fw flag - All Firmware commands output is collected by default
+    - Support for python2.6
+
+    * Bug fixes:
+
+    - Sysinfo fails on older Python on RHEL 6.8
+    - Get all firmware dump outputs by default
+    - Sysinfo fails to run on Debian ( empty logs)
+    - Bonding information goes into dummy_functions output
+    - Multiple information when running firmware dumps on vfs or pfs
+
+ -- Alexander Petrovskiy <alexpe@mellanox.com>  Fri, 27 Sep 2019 02:53:21 +0300 
+
+sysinfo-snapshot (3.3.6) bionic; urgency=medium
+
+  * General :
+    - Add open source mst query commands if MFT is not installed.
+
+ -- Alexander Petrovskiy <alexpe@mellanox.com>  Thu, 18 Apr 2019 12:02:35 +0300
+
+sysinfo-snapshot (3.3.4-1) unstable; urgency=medium
+
+  * Release GA v3.3.4
+
+  * General :
+    - Collect three consecutive mstdumps when FW flag is provided
+    - Add support for devlink health tool
+
+  * Added Commands :
+    - Add  -s -s  to collect more counters from ip link / ipaddr show
+    - Adding mlxlink PCIE commands
+    - Added mget_temp command to get device temperature
+
+  * Fixed bugs:
+    - Sysinfo snapshot bug with ConnectX-6 - 'card_str' is not defined
+    - Ethtool ignores representor interfaces
+    - ibdiagnet output not collected
+    - Running sysinfo snapshot with "-d" flag does not change the directory
+
+ -- Alexander Petrovskiy <alexpe@mellanox.com>  Sun, 31 Mar 2019 16:07:12 +0300
