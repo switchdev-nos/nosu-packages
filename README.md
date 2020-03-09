@@ -9,5 +9,5 @@ Build scripts for NOSU packages
 
 * Clone this repo: `git clone https://github.com/switchdev-nos/nosu-packages
 * `cd nosu-packages`
-* `./build.sh`
+* `./build.sh env/default`
 * NOSU DEB packages will be placed in: `./debs`
