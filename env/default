@@ -1,3 +1,4 @@
+CLEAN=true
 
 NOSU_PACKAGES=(
   iproute2
@@ -7,4 +8,5 @@ NOSU_PACKAGES=(
   hw-mgmt
   mlnx-tools
   sysinfo-snapshot
+  frr
 )

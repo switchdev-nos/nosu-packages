@@ -2,6 +2,7 @@
 
 DEBSDIR="./debs"
 ROOTDIR="$PWD"
+PKGDIR=$PWD/packages
 
 fail() {
   [ -n "$1" ] && echo $1
@@ -25,9 +26,17 @@ fi
 
 [ -n "$NOSU_PACKAGES" ] || fail "NOSU_PACKAGES is not set"
 
+if [ "$CLEAN" = true ]; then
+  echo "== Cleaning old debs"
+  for pkg in "${NOSU_PACKAGES[@]}"; do
+    rm -f $PKGDIR/$pkg/debs/*.deb
+    rm -f $DEBSDIR/*.deb
+  done
+fi
+
 for pkg in "${NOSU_PACKAGES[@]}"; do
   echo "Building $pkg..."
-  cd $pkg
+  cd $PKGDIR/$pkg
   ./docker_build.sh &
   cd $ROOTDIR
 done
@@ -39,7 +48,7 @@ cd $ROOTDIR
 mkdir -p "$DEBSDIR"
 
 for pkg in "${NOSU_PACKAGES[@]}"; do
-  mv "$pkg"/debs/*.deb "$DEBSDIR"/
+  mv $PKGDIR/$pkg/debs/*.deb $DEBSDIR/
 done
 
 echo "== all DEB packages moved to $DEBSDIR"

@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-frr:
+    build: ./
+    image: nosu-pkg-frr
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/env/default" ]
