@@ -3,6 +3,7 @@
 DEBSDIR="./debs"
 ROOTDIR="$PWD"
 PKGDIR=$PWD/packages
+KERNELDIR=$PWD/kernel
 
 fail() {
   [ -n "$1" ] && echo $1
@@ -35,6 +36,7 @@ if [ "$CLEAN" = true ]; then
 fi
 
 for pkg in "${NOSU_PACKAGES[@]}"; do
+  ln -sf $KERNELDIR $PKGDIR/$pkg/kernel
   echo "Building $pkg..."
   cd $PKGDIR/$pkg
   ./docker_build.sh &
@@ -49,6 +51,7 @@ mkdir -p "$DEBSDIR"
 
 for pkg in "${NOSU_PACKAGES[@]}"; do
   mv $PKGDIR/$pkg/debs/*.deb $DEBSDIR/
+  rm -fr $PKGDIR/$pkg/kernel
 done
 
 echo "== all DEB packages moved to $DEBSDIR"

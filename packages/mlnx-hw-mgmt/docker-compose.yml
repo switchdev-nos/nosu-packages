@@ -1,8 +1,8 @@
 version: '2'
 services:
-  nosu-pkg-hw-mgmt:
+  nosu-pkg-mlnx-hw-mgmt:
     build: ./
-    image: nosu-pkg-hw-mgmt
+    image: nosu-pkg-mlnx-hw-mgmt
     privileged: true
     volumes:
       - ".:/mnt"

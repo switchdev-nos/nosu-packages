@@ -33,11 +33,11 @@ fi
 
 HW_MGMT_BUILDDIR="$BUILDDIR"/hw-mgmt
 
-if [ -n "$PKG_HW_MGMT_GIT" ] && [ ! -d "$HW_MGMT_BUILDDIR" ]; then
-  if [ -n "$PKG_HW_MGMT_GIT_BRANCH" ]; then
-    CLONE="$PKG_HW_MGMT_GIT -b $PKG_HW_MGMT_GIT_BRANCH $HW_MGMT_BUILDDIR"
+if [ -n "$PKG_MLNX_HW_MGMT_GIT" ] && [ ! -d "$HW_MGMT_BUILDDIR" ]; then
+  if [ -n "$PKG_MLNX_HW_MGMT_GIT_BRANCH" ]; then
+    CLONE="$PKG_MLNX_HW_MGMT_GIT -b $PKG_MLNX_HW_MGMT_GIT_BRANCH $HW_MGMT_BUILDDIR"
   else
-    CLONE="$PKG_HW_MGMT_GIT $HW_MGMT_BUILDDIR"
+    CLONE="$PKG_MLNX_HW_MGMT_GIT $HW_MGMT_BUILDDIR"
   fi
   echo "Clone: $CLONE"
   git clone $CLONE

@@ -1,12 +1,14 @@
 CLEAN=true
 
 NOSU_PACKAGES=(
+  frr
   iproute2
   ifupdown2
   vrf
   sosreport
-  hw-mgmt
+  mlnx-hw-mgmt
   mlnx-tools
-  sysinfo-snapshot
-  frr
+  mlnx-mft
+  mlnx-firmware
+  mlnx-sysinfo-snapshot
 )

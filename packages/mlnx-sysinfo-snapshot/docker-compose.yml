@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-mlnx-sysinfo-snapshot:
+    build: ./
+    image: nosu-pkg-mlnx-sysinfo-snapshot
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/env/default" ]

@@ -1,6 +1,0 @@
-CLEAN=true
-DEBFULLNAME="Alexander Petrovskiy"
-DEBEMAIL="alexpe@mellanox.com"
-
-PKG_SYSINFO_SNAPSHOT_GIT="https://github.com/Mellanox/linux-sysinfo-snapshot"
-PKG_SYSINFO_SNAPSHOT_GIT_BRANCH="3.5.0"

@@ -1,0 +1,11 @@
+version: '2'
+services:
+  nosu-pkg-mlnx-firmware:
+    build: ./
+    image: nosu-pkg-mlnx-firmware
+    privileged: true
+    volumes:
+      - "./kernel:/tmp/kernel"
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/env/default" ]
