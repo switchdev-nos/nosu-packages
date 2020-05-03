@@ -55,5 +55,5 @@ echo "== NEW frr package was successfully built!"
 
 cd "$ROOTDIR"
 mkdir -p "$DEBSDIR"
-mv "$BUILDDIR"/*.deb "$DEBSDIR"/
+mv -f "$BUILDDIR"/*.deb "$DEBSDIR"/
 echo "== frr DEB packages moved to $DEBSDIR"

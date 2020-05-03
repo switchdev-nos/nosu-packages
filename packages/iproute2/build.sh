@@ -73,5 +73,5 @@ echo "== NEW iproute2 package was successfully built!"
 
 cd "$ROOTDIR"
 mkdir -p "$DEBSDIR"
-mv "$BUILDDIR"/*.deb "$DEBSDIR"/
+mv -f "$BUILDDIR"/*.deb "$DEBSDIR"/
 echo "== iproute2 DEB packages moved to $DEBSDIR"

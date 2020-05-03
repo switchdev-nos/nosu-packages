@@ -59,7 +59,7 @@ dkms autoinstall -k "$KERNEL_FULLVER" --force
 [[ $? == 0 ]] || fail "MFT DKMS modules build failed"
 
 mkdir -p "$MFT_DEB_DIR"/debian
-mv "$MFT_DKMS_PATH"/*.ko "$MFT_DEB_DIR"
+mv -f "$MFT_DKMS_PATH"/*.ko "$MFT_DEB_DIR"
 
 echo 10 > "$MFT_DEB_DIR"/debian/compat
 
@@ -111,6 +111,6 @@ echo "== NEW kernel-mft-dkms package for kernel $KERNEL_FULLVER was successfully
 
 cd "$ROOTDIR"
 mkdir -p "$DEBSDIR"
-mv "$BUILDDIR"/*.deb "$DEBSDIR"/
-mv "$MFTDIR"/DEBS/mft_*.deb "$DEBSDIR"/
+mv -f "$BUILDDIR"/*.deb "$DEBSDIR"/
+mv -f "$MFTDIR"/DEBS/mft_*.deb "$DEBSDIR"/
 echo "== MFT DEB packages moved to $DEBSDIR"

@@ -54,5 +54,5 @@ echo "== NEW hw-mgmt package was successfully built!"
 
 cd "$ROOTDIR"
 mkdir -p "$DEBSDIR"
-mv "$BUILDDIR"/*.deb "$DEBSDIR"/
+mv -f "$BUILDDIR"/*.deb "$DEBSDIR"/
 echo "== hw-mgmt DEB packages moved to $DEBSDIR"

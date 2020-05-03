@@ -54,5 +54,5 @@ echo "== NEW sosreport package was successfully built!"
 
 cd "$ROOTDIR"
 mkdir -p "$DEBSDIR"
-mv "$BUILDDIR"/*.deb "$DEBSDIR"/
+mv -f "$BUILDDIR"/*.deb "$DEBSDIR"/
 echo "== sosreport DEB packages moved to $DEBSDIR"

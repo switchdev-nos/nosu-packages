@@ -97,5 +97,5 @@ echo "== NEW mlnx-firmware package was successfully built!"
 
 cd "$ROOTDIR"
 mkdir -p "$DEBSDIR"
-mv "$BUILDDIR"/*.deb "$DEBSDIR"/
+mv -f "$BUILDDIR"/*.deb "$DEBSDIR"/
 echo "== Mellanox Firmware DEB package moved to $DEBSDIR"

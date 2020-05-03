@@ -54,5 +54,5 @@ echo "== NEW mlnx-tools package was successfully built!"
 
 cd "$ROOTDIR"
 mkdir -p "$DEBSDIR"
-mv "$BUILDDIR"/*.deb "$DEBSDIR"/
+mv -f "$BUILDDIR"/*.deb "$DEBSDIR"/
 echo "== mlnx-tools DEB packages moved to $DEBSDIR"
