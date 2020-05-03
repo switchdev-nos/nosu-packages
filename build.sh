@@ -50,7 +50,7 @@ cd $ROOTDIR
 mkdir -p "$DEBSDIR"
 
 for pkg in "${NOSU_PACKAGES[@]}"; do
-  mv $PKGDIR/$pkg/debs/*.deb $DEBSDIR/
+  mv -f $PKGDIR/$pkg/debs/*.deb $DEBSDIR/
   rm -fr $PKGDIR/$pkg/kernel
 done
 
