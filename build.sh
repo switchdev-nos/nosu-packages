@@ -4,6 +4,7 @@ DEBSDIR="./debs"
 ROOTDIR="$PWD"
 PKGDIR=$PWD/packages
 KERNELDIR=$PWD/kernel
+ENVFILE=$1
 
 fail() {
   [ -n "$1" ] && echo $1
@@ -11,17 +12,17 @@ fail() {
 }
 
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-  echo "Usage: $0 [ENV_FILE]"
+  echo "Usage: $0 [ENVFILE]"
   exit 0
 fi
 
-if [ -n "$1" ]; then
-  if [ -r "$1" ]; then
+if [ -n "$ENVFILE" ]; then
+  if [ -r "$ENVFILE" ]; then
     set -a
-    . "$1"
+    . "$ENVFILE"
     set +a
   else
-    fail "ENV_FILE not readable or missing"
+    fail "ENVFILE not readable or missing"
   fi
 fi
 
@@ -36,11 +37,13 @@ if [ "$CLEAN" = true ]; then
 fi
 
 for pkg in "${NOSU_PACKAGES[@]}"; do
+  rm -fr $PKGDIR/$pkg/kernel
   ln -sf $KERNELDIR $PKGDIR/$pkg/kernel
   echo "Building $pkg..."
-  cd $PKGDIR/$pkg
-  ./docker_build.sh &
-  cd $ROOTDIR
+  cat $PKGDIR/$pkg/env/default $ENVFILE > $PKGDIR/$pkg/env/build
+  pushd $PKGDIR/$pkg
+  ./docker_build.sh ./env/build &
+  popd
 done
 
 wait
@@ -52,6 +55,7 @@ mkdir -p "$DEBSDIR"
 for pkg in "${NOSU_PACKAGES[@]}"; do
   mv -f $PKGDIR/$pkg/debs/*.deb $DEBSDIR/
   rm -fr $PKGDIR/$pkg/kernel
+  rm -f $PKGDIR/$pkg/env/build
 done
 
 echo "== all DEB packages moved to $DEBSDIR"

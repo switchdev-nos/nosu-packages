@@ -1,3 +1,5 @@
 #!/bin/bash
 
-docker-compose run --rm nosu-pkg-mlnx-mft
+ENVFILE="./env/default"
+[ -n "$1" ] && ENVFILE=$1
+ENVFILE=$ENVFILE docker-compose run --rm nosu-pkg-mlnx-mft

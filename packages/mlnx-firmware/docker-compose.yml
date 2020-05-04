@@ -8,4 +8,4 @@ services:
       - "./kernel:/tmp/kernel"
       - ".:/mnt"
     working_dir: /mnt
-    command: [ "/mnt/build.sh", "/mnt/env/default" ]
+    command: [ "/mnt/build.sh", "/mnt/${ENVFILE}" ]
