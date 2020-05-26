@@ -2,6 +2,7 @@ CLEAN=true
 
 NOSU_PACKAGES=(
   frr
+  bird
   iproute2
   ifupdown2
   keepalived

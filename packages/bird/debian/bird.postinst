@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+  # TODO: Change hardcoded 'bird' to envvar
+  if ! getent passwd bird >/dev/null; then
+    adduser --quiet --system --group --no-create-home --home /run/bird bird
+  fi
+
+  dpkg-statoverride --list /etc/bird >/dev/null || dpkg-statoverride --update --add bird bird 0750 /etc/bird
+
+  for c in bird.conf; do
+    UCF_FORCE_CONFFOLD=yes ucf /usr/share/bird/$c /etc/bird/$c
+    ucfr bird /etc/bird/$c
+    dpkg-statoverride --list /etc/bird/$c >/dev/null || dpkg-statoverride --update --add bird bird 0640 /etc/bird/$c
+  done
+fi
+
+#DEBHELPER#
+
+exit 0

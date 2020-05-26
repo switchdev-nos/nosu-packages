@@ -1,0 +1,56 @@
+Source: bird
+Section: net
+Priority: optional
+Build-Depends: debhelper (>= 10),
+               docbook-xsl,
+               flex,
+               libncurses5-dev,
+               libreadline-dev | libreadline6-dev | libreadline5-dev,
+               libssh-gcrypt-dev,
+               linuxdoc-tools-latex,
+               m4,
+               opensp,
+               quilt,
+               texlive-latex-extra,
+               xsltproc
+Maintainer: Alexander Petrovskiy <alexpe@mellanox.com>
+Standards-Version: 4.1.2
+Homepage: https://bird.network.cz/
+Vcs-Git: https://gitlab.labs.nic.cz/labs/bird.git
+Vcs-Browser: https://gitlab.labs.nic.cz/labs/bird
+
+Package: bird
+Architecture: linux-any
+Depends: adduser,
+         ucf,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: routed,
+           zebra
+Breaks: bird-bgp (<< 1.6.4-1~)
+Replaces: bird-bgp (<< 1.6.4-1~)
+Provides: bird
+Suggests: bird-docs
+Description: Internet Routing Daemon
+ BIRD is an Internet routing daemon with full support for all the major
+ routing protocols. It allows redistribution between protocols with a
+ powerful route filtering syntax and an easy-to-use configuration
+ interface.
+ .
+ This package supports IPv4 and IPv6 versions of OSPF, RIP and BGP.
+ .
+ Routing protocols: bfd babel bgp ospf pipe radv rip static
+ Kernel MPLS support: yes
+
+#Package: bird-docs
+#Architecture: all
+#Section: doc
+#Priority: optional
+#Depends: ${misc:Depends}
+#Description: Internet Routing Daemon - documentation
+# BIRD is an Internet routing daemon with full support for all the major
+# routing protocols. It allows redistribution between protocols with a
+# powerful route filtering syntax and an easy-to-use configuration
+# interface.
+# .
+# This package provides the user and developer documentation.

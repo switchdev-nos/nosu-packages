@@ -1,0 +1,5 @@
+# etc/bird/bird.conf /usr/share/doc/bird/examples/
+bird.conf /etc/bird/
+etc/bird/envvars
+usr/lib/bird/prepare-environment
+usr/share/bird/*.conf*

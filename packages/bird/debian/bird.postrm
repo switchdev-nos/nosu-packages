@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+if test "$1" = "purge"; then
+  dpkg-statoverride --remove /etc/bird >/dev/null 2>/dev/null || true
+
+  for c in bird.conf; do
+    dpkg-statoverride --remove /etc/bird/$c >/dev/null 2>/dev/null || true
+    
+    for ext in '~' '%' .bak .ucf-new .ucf-old .ucf-dist; do
+      rm -f /etc/bird/$c$ext
+    done
+
+    rm -f /etc/bird/$c
+    if which ucf >/dev/null; then
+      ucf --purge /etc/bird/$c
+    fi
+
+    if which ucfr >/dev/null; then
+      ucfr --purge bird /etc/bird/$c
+    fi
+  done
+
+  deluser --quiet bird >/dev/null || true
+fi
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,3 @@
+bird: binary-without-manpage usr/sbin/bird
+bird: binary-without-manpage usr/sbin/birdc
+bird: binary-without-manpage usr/sbin/birdcl

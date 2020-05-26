@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-bird:
+    build: ./
+    image: nosu-pkg-bird
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/${ENVFILE}" ]
