@@ -1,0 +1,9 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@mellanox.com"
+
+CLEAN=true
+PKG_KEEPALIVED_VERSION="2.0.20"
+#PKG_KEEPALIVED_SNAPSHOT=""
+PKG_KEEPALIVED_GIT="https://github.com/acassen/keepalived"
+#PKG_KEEPALIVED_GIT_BRANCH="v2.0.20"

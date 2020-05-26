@@ -2,7 +2,7 @@ CLEAN=true
 DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@mellanox.com"
 
-PKG_MLNX_MFT_VERSION="4.14.0-105"
-PKG_MLNX_MFT_SNAPSHOT="https://www.mellanox.com/downloads/MFT/mft-4.14.0-105-x86_64-deb.tgz"
-KERNEL_VERSION="5.7.0-rc3"
+PKG_MLNX_MFT_VERSION="4.14.2-17"
+PKG_MLNX_MFT_SNAPSHOT="https://www.mellanox.com/downloads/MFT/mft-4.14.2-17-x86_64-deb.tgz"
+KERNEL_VERSION="5.7.0-rc7"
 KERNEL_LOCALVER="nosu"

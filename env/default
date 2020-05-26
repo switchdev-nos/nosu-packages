@@ -4,6 +4,7 @@ NOSU_PACKAGES=(
   frr
   iproute2
   ifupdown2
+  keepalived
   vrf
   sosreport
   mlnx-hw-mgmt
