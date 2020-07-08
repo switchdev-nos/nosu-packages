@@ -12,8 +12,3 @@ override_dh_auto_configure:
 
 override_dh_auto_install:
 	dh_auto_install
-	rm -rf debian/keepalived/etc/keepalived/samples/
-	rm -rf debian/keepalived/etc/rc.d
-	rm -rf debian/keepalived/etc/keepalived/keepalived.conf
-	rm -rf debian/keepalived/etc/sysconfig
-	rm -rf debian/keepalived/usr/man
