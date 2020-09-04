@@ -3,4 +3,4 @@ DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@mellanox.com"
 
 PKG_FRR_GIT="https://github.com/FRRouting/frr"
-PKG_FRR_GIT_BRANCH="stable/7.3"
+PKG_FRR_GIT_BRANCH="stable/7.4"
