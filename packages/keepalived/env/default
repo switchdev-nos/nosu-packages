@@ -1,9 +1,9 @@
 CLEAN=true
 DEBFULLNAME="Alexander Petrovskiy"
-DEBEMAIL="alexpe@mellanox.com"
+DEBEMAIL="alexpe@nvidia.com"
 
 CLEAN=true
-PKG_KEEPALIVED_VERSION="2.1.3"
+PKG_KEEPALIVED_VERSION="2.1.5"
 #PKG_KEEPALIVED_SNAPSHOT=""
 PKG_KEEPALIVED_GIT="https://github.com/acassen/keepalived"
-PKG_KEEPALIVED_GIT_BRANCH="v2.1.3"
+PKG_KEEPALIVED_GIT_BRANCH="v2.1.5"

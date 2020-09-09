@@ -1,6 +1,6 @@
 CLEAN=true
 DEBFULLNAME="Alexander Petrovskiy"
-DEBEMAIL="alexpe@mellanox.com"
+DEBEMAIL="alexpe@nvidia.com"
 
 PKG_MLNX_HW_MGMT_GIT="https://github.com/Mellanox/hw-mgmt"
-PKG_MLNX_HW_MGMT_GIT_BRANCH="V.7.0010.1000"
+PKG_MLNX_HW_MGMT_GIT_BRANCH="V.7.0010.1300"

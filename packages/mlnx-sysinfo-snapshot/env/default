@@ -1,6 +1,6 @@
 CLEAN=true
 DEBFULLNAME="Alexander Petrovskiy"
-DEBEMAIL="alexpe@mellanox.com"
+DEBEMAIL="alexpe@nvidia.com"
 
 PKG_MLNX_SYSINFO_SNAPSHOT_GIT="https://github.com/Mellanox/linux-sysinfo-snapshot"
 PKG_MLNX_SYSINFO_SNAPSHOT_GIT_BRANCH="v3.5.6"
