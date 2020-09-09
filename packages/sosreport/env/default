@@ -2,5 +2,5 @@ CLEAN=true
 DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
-PKG_SOSREPORT_GIT="https://github.com/kvadrage/sos"
-PKG_SOSREPORT_GIT_BRANCH="alex-devel"
+PKG_SOSREPORT_GIT="https://github.com/sosreport/sos"
+PKG_SOSREPORT_GIT_BRANCH="4.0"
