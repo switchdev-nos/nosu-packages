@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-mstpd:
+    build: ./
+    image: nosu-pkg-mstpd
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/${ENVFILE}" ]

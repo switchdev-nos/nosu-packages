@@ -1,0 +1,8 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@nvidia.com"
+
+PKG_MSTPD_VERSION="0.r37-cl4u3"
+PKG_MSTPD_DEBS=(
+    "http://apt.cumulusnetworks.com/repo/pool/cumulus/m/mstpd/mstpd_0.r37-cl4u3_amd64.deb"
+)

@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-i2c-tools:
+    build: ./
+    image: nosu-pkg-i2c-tools
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/${ENVFILE}" ]

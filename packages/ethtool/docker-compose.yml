@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nosu-pkg-ethtool:
+    build: ./
+    image: nosu-pkg-ethtool
+    privileged: true
+    volumes:
+      - ".:/mnt"
+    working_dir: /mnt
+    command: [ "/mnt/build.sh", "/mnt/${ENVFILE}" ]

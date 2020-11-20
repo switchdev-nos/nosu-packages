@@ -4,10 +4,13 @@ NOSU_PACKAGES=(
   frr
   bird
   iproute2
+  ethtool
   ifupdown2
   keepalived
+  mstpd
   vrf
   sosreport
+  i2c-tools
   mlnx-hw-mgmt
   mlnx-tools
   mlnx-mft

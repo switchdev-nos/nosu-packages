@@ -2,5 +2,5 @@ CLEAN=true
 DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
-PKG_VRF_GIT="https://github.com/kvadrage/vrf"
+PKG_VRF_GIT="https://github.com/CumulusNetworks/vrf"
 #PKG_VRF_GIT_BRANCH=""
