@@ -3,4 +3,4 @@ DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
 PKG_SOSREPORT_GIT="https://github.com/sosreport/sos"
-PKG_SOSREPORT_GIT_BRANCH="4.0"
+PKG_SOSREPORT_GIT_BRANCH="4.1"

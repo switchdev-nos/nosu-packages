@@ -1,0 +1,6 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@nvidia.com"
+
+PKG_HSFLOWD_GIT="https://github.com/sflow/host-sflow"
+#PKG_HSFLOWD_GIT_BRANCH="v2.0.33-1"

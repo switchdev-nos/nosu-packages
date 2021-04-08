@@ -3,4 +3,4 @@ DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
 PKG_FRR_GIT="https://github.com/FRRouting/frr"
-PKG_FRR_GIT_BRANCH="stable/7.5"
+PKG_FRR_GIT_BRANCH="frr-7.5.1"

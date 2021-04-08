@@ -4,5 +4,5 @@ DEBEMAIL="alexpe@nvidia.com"
 
 PKG_MLNX_MFT_VERSION="4.15.1-9"
 PKG_MLNX_MFT_SNAPSHOT="https://www.mellanox.com/downloads/MFT/mft-4.15.1-9-x86_64-deb.tgz"
-KERNEL_VERSION="5.9.11"
-KERNEL_LOCALVER="nosu"
+KERNEL_VERSION="5.11.0"
+KERNEL_LOCALVER="nosu-resh"

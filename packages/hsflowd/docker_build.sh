@@ -2,4 +2,4 @@
 
 ENVFILE="./env/default"
 [ -n "$1" ] && ENVFILE=$1
-ENVFILE=$ENVFILE docker-compose run --rm nosu-pkg-i2c-tools
+ENVFILE=$ENVFILE docker-compose run --rm nosu-pkg-hsflowd

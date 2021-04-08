@@ -8,7 +8,7 @@ Copyright: 2012-2013 Bryn M. Reeves
 	   2007-2013 Red Hat, Inc.
 License: GPL-2+
 
-Files: sos/plugins/kernelrt.py
+Files: sos/report/plugins/kernelrt.py
 Copyright: 2012 Red Hat, Inc.
 License: GPL-2
 

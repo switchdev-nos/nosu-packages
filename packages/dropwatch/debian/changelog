@@ -1,0 +1,17 @@
+dropwatch (1.5.3-1) unstable; urgency=medium
+
+  * Update to upstream commit 86f7448179c1e7155a22d32c87d416e4b33f015e
+
+ -- Alexander Petrovskiy <alexpe@nvidia.com>  Thu, 18 Feb 2021 23:44:46 +0300
+
+dropwatch (1.5.1-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 01 Dec 2019 22:16:03 +1100
+
+dropwatch (1.5.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #914577).
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 04 Nov 2019 04:11:01 +1100

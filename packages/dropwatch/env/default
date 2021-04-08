@@ -1,0 +1,7 @@
+CLEAN=true
+DEBFULLNAME="Alexander Petrovskiy"
+DEBEMAIL="alexpe@nvidia.com"
+
+PKG_DROPWATCH_GIT="https://github.com/nhorman/dropwatch"
+PKG_DROPWATCH_GIT_BRANCH=""
+PKG_DROPWATCH_GIT_HASH="86f7448179c1e7155a22d32c87d416e4b33f015e"

@@ -1,9 +1,0 @@
-CLEAN=true
-DEBFULLNAME="Alexander Petrovskiy"
-DEBEMAIL="alexpe@nvidia.com"
-
-PKG_I2C_TOOLS_VERSION="4.1-1"
-PKG_I2C_TOOLS_DEBS=(
-    "http://ftp.us.debian.org/debian/pool/main/i/i2c-tools/i2c-tools_4.1-1_amd64.deb"
-    "http://ftp.us.debian.org/debian/pool/main/i/i2c-tools/libi2c0_4.1-1_amd64.deb"
-)

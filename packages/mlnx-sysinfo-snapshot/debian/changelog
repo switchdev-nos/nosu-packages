@@ -1,6 +1,6 @@
-sysinfo-snapshot (3.5.0) bionic; urgency=medium
+sysinfo-snapshot (3.6.1) bionic; urgency=medium
 
-    * Upstream release 3.5.0
+    * Upstream release 3.6.1
 
  -- Alexander Petrovskiy <alexpe@mellanox.com>  Tue, 10 Mar 2020 01:27:23 +0300
 

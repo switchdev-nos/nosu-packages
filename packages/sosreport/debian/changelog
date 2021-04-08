@@ -1,5 +1,693 @@
-sosreport (4.0-1ubuntu1) bionic; urgency=medium
+sosreport (4.1-1ubuntu1.20.04.4) focal; urgency=medium
 
-  * New 4.0 upstream release. 
+  Update to upstream release 4.1
 
- -- Alexander Petrovskiy <alexpe@nvidia.com>  Wed, 09 Sep 2020 16:18:00 +0300 
+ -- Alexander Petrovskiy <alexpe@nvidia.com>  Wed, 10 Mar 2021 14:16:58 +0300
+
+sosreport (4.0-1~ubuntu0.20.04.4) focal; urgency=medium
+
+  [Ponnuvel Palaniyappan]
+  * d/p/0011-ceph-include-time-sync-status-for-ceph-mon.patch:
+    - Ceph mons might get into time sync problems if ntp/chrony
+      isn't installed or configured correctly. Since Luminous
+      release, upstream support 'time-sync-status' to detect this
+      more easily. (LP: #1910264)
+
+  [Eric Desrochers]
+  * d/p/0012-apt-move-unattended-upgrades-log-collection.patch
+  (LP: #1906302)
+
+  [Ponnuvel Palaniyappan]
+  * d/p/0013-bcache-add-a-new-plugin-for-bcache.patch
+  (LP: #1913284)
+
+  [Felipe Reyes]
+  * d/p/0014-k8s-add-cdk-master-auth-webhook-to-journal.patch
+  * d/p/0015-k8s-fix-cdk-related-file-paths.patch
+  (LP: #1913583)
+
+  [Michael Biebl]
+  * d/p/0016-systemd-prefer-resolvectl-over-systemd-resolve.patch
+    (LP: #1913581)
+
+  [Edward Hope-Morley]
+  * d/p/0017-ovn-extend-information.patch (LP: #1915072)
+    - Extend ovn informations
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Tue, 16 Feb 2021 14:30:09 -0500
+
+sosreport (4.0-1~ubuntu0.20.04.3) focal; urgency=medium
+
+  [Hemanth Nakkina]
+  * d/p/0008-conntrack-add-conntrack-info.patch: rename the
+    conntrackd plugin to conntrack; add conntrack commands.
+    (LP: #1898077)
+
+  [Mauricio Oliveira]
+  * d/p/0009-conntrack-gather-per-namespace-data.patch: add
+    conntrack commands for network namespaces. 
+    (LP 1898077)
+
+  [Edward Hope-Morley]
+  * d/p/0010-networking-include-ns-ip-neigh-and-ip-rule-info.patch:
+    add ip neigh and ip rule commands for network namespaces.
+    (LP: #1901555)
+
+ -- Mauricio Faria de Oliveira <mfo@canonical.com>  Tue, 29 Dec 2020 16:16:45 -0300
+
+sosreport (4.0-1~ubuntu0.20.04.2) focal; urgency=medium
+
+  [Eric Desrochers]
+  * d/p/0003-sosclean-fix-handling-of-filepath-with-archive-name.patch:
+    - Fixes the splitting of filepaths within the archive,
+      when the archive name is included in the filename
+      inside the archive. (LP: #1896222)
+
+  * d/p/0004-sosclean-fix-tarball-skipping-regex.patch:
+    - Fix tarball skipping regex
+
+  [Dan Hill]
+  * d/p/0005-ceph-collect-balancer-and-pg-autoscale-status.patch:
+    - Collect balancer and pg-autoscale status (LP: #1893109)
+
+  [Nicolas Bock]
+  * d/p/0006-rabbitmq-add-info-on-maybe-stuck-processes.patch:
+    - Add information on maybe_stuck() processes for RMQ. (LP: #1890846)
+
+  * d/p/0007-rabbitmq-add-10sec-timeout-to-call-to-maybestuck.patch:
+    - Add 10 second timeout to call to `maybe_stuck()`.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Wed, 30 Sep 2020 14:29:50 -0400
+
+sosreport (4.0-1~ubuntu0.20.04.1) focal; urgency=medium
+
+  * New 4.0 upstream release. (LP: #1892275)
+
+    Release information and tarballs are available at:
+    - https://github.com/sosreport/sos/releases/tag/4.0
+
+  * Other specific modifications:
+    - d/p/0001-debian-change-tmp-dir-location.patch
+    - d/p/0002-fix-dict-order-py38-incompatibility.patch
+
+  * d/control: Maintainer change from Louis to Eric.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Thu, 27 Aug 2020 13:59:51 +0000
+
+sosreport (3.9.1-1ubuntu0.20.04.2) focal; urgency=medium
+
+  * d/p/0004-maas-add-snap-support.patch (LP: #1886494)
+    From 2.7.0 onwards, MAAS is using snaps for it's
+    releases, and this changes the location of files
+    and logs.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Tue, 07 Jul 2020 19:19:09 +0000
+
+sosreport (3.9.1-1ubuntu0.20.04.1) focal; urgency=medium
+
+  * New 3.9.1 upstream release. (LP: #1884293) (LP: #1883320)
+    This maintenance release includes:
+    - New plugins: sos_extras, ovirt_engine_backup, console,
+      validation_framework.
+    - lxd plugin collections have been overhauled.
+    - Fixed handling of the namespace pattern for the networking
+      plugin.
+    - A basic path is now defined in Policy for all subclasses.
+
+    Plugin API Enhancements:
+    - Enablement checks have been extended to include architecture
+      constraints.
+    - SoSPredicate has been extended to include architecture constraints,
+      as well as negative constraints for all elements.
+    - Plugins will now capture service status information for all services
+      defined in the services class attr.
+
+    Further release information and tarballs are available at:
+    - https://github.com/sosreport/sos/releases/tag/3.9.1
+
+  * Former patches now fixed upstream:
+    - d/p/0001-unittest-py3-fix.patch
+    - d/p/0002-lxd-drop-db-collection-and-introduce-lxd-buginfo.patch
+
+  * Other specific modifications:
+    - d/p/0001-lshw-command.patch
+    - d/p/0002-lds-substitute-oidc-conf.patch
+    - d/p/0003-kvm-change-trigger-to-dev-kvm.patch
+
+ -- Eric Desrochers <slashd@ubuntu.com>  Tue, 16 Jun 2020 12:18:58 +0000
+
+sosreport (3.9-1ubuntu2.1) focal; urgency=low
+
+  * d/p/0003-lshw-command.patch: (LP: #1871494)
+    - Add `lshw` command to hardware plugin
+
+  [Eric Desrochers]
+  * d/p/0004-lds-substitute-oidc-conf.patch:
+    - landscape substitute oidc conf
+      in service file (LP: #1874526)
+
+ -- Heather Lemon <heather.lemon@canonical.com>  Mon, 27 Apr 2020 09:33:16 -0600
+
+sosreport (3.9-1ubuntu2) focal; urgency=medium
+
+  * d/p/0002-lxd-drop-db-collection-and-introduce-lxd-buginfo.patch:
+    - Drop db collection and introduce lxd.buginfo (LP: #1868215)
+
+  * d/tests/{control,simple.sh}: (LP: #1865212)
+    - Add testsuite "simple.sh". A port of the travis tests to bash
+      provided by upstream.
+
+ -- Seyeong Kim <seyeong.kim@canonical.com>  Fri, 20 Mar 2020 06:48:01 +0000
+
+sosreport (3.9-1ubuntu1) focal; urgency=medium
+
+  * debian/control:
+    Drop accidentally re-introduces py2 runtime dependency
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Mon, 17 Feb 2020 07:28:29 -0500
+
+sosreport (3.9-1) unstable; urgency=medium
+
+  * New 3.9 upstream release.
+    - Improved human-readable archive naming and support for archive labels
+    - Improved reporting of archive output and properties
+    - Support for automatic uploading of report archives via FTP and HTTPS
+    - Automatic PATH support on Ubuntu distributions
+    - Improved policy performance
+    - Improved service status collection API
+    - 9 new plugins: cloud_init, convert2rhel, ebpf, fwupd, login, nginx,
+      nvidia, openstack_tripleo
+    - 6 obsolete plugins removed or merged into other plugins:
+      katello, last, mrggrid, mrgmessg, satellite
+    - Significant updates to 14 plugins: dlm, dnf, ceph, foreman, gluster,
+      gnocchi, juju, kubernetes, logs, maas, networking, openvswitch,
+      python, plugins
+    - The openswan plugin was renamed to libreswan to reflect the active
+      upstream project name
+    - Updated Red Hat presets and new Cloud Forms preset
+    - Updates to networking plugin namespace handling
+    - Updates to the OVN plugins (ovn_central, ovn_host)
+    - Kernel eBPF data consolidated in a single plugin
+
+  Further release information and tarballs are available at:
+    https://github.com/sosreport/sos/releases/tag/3.9
+
+  * Other specific modifications:
+    - d/p/0001-unittest-py3-fix.patch
+
+ -- Eric Desrochers <slashd@ubuntu.com>  Sun, 16 Feb 2020 01:35:52 +0000
+
+sosreport (3.8-1) unstable; urgency=medium
+
+  * New 3.8 upstream release.
+    Contains a number of enhancements, new features and bug fixes including:
+    - 6 new plugins: container_log, frr, leapp, openstack_placement, qt, vdsm
+    - kubernetes plugin can now optionally grab logs only for certain pods
+    - kdump plugin will now collect initramfs content
+    - pulp and foreman plugins now support collecting from an external database
+    - sar plugin will now collect the full sar log dir
+    - vdsm and ovirt plugins will now collect host certificates
+    - openvswitch plugin will now enable on openvswitch2.* packages
+    - Added support for only capturing logs after a specific date, --since
+      option
+    - Fixed an issue causing high CPU utilization which slowed journal
+      collection
+    - Fixed an issue where plugins could continue executing commands after
+      their timeout was hit
+    - sosreport will no longer abort execution on Red Hat family systems when
+      the package manager fails to query a file list
+
+  * Plugin API enhancements
+    - Plugins may now capture environment variables, which will be written to
+      /environment in the sos archive root
+    - Plugins may now write command output to subdirs within their own
+      sos_commands/plugin directory
+      - The container plugins have been updated to make use of this
+        functionality
+    - SoSPredicate usage may now be match either any or all of the provided
+      elements, and may mix requirements of kmods and services to determine
+      if a command should be collected.
+
+  * Significant changes to the reporting system of sos
+    - HTML reports replaced by a Report subclass
+    - HTML report creation time is significantly improved
+    - Added a JSON formatted report option
+
+  * Allow system changes option
+    - A new --allow-system-changes option has been added that will allow users
+      to collect certain data, even if it means the host system would be
+      changed.
+
+  * Former patches now fixed upstream:
+    - d/p/0001-skip-py2-only-tests.patch
+    - d/p/archive-fix-stat-typo.patch
+    - d/p/avoid-distutils.diff
+
+ -- Eric Desrochers <slashd@ubuntu.com>  Mon, 09 Sep 2019 15:40:31 +0000
+
+sosreport (3.6-1) unstable; urgency=medium
+
+  * New 3.6 upstream release.
+    major enhancements to core features and existing plugins:
+
+    - better package manager version information
+    - policy support for detecting package managed files
+    - fixed exit status propagation
+    - deprecated optparse replaced with argparse
+    - simplified and improved SoSOptions interface
+    - better error handling during interactive prompting
+    - allow journal collection by identifier
+    - allow collection of journal message catalogs
+    - support for collecting binary file data
+    - more fine-grained system plugins (date etc.)
+    - policy defined report file name patterns
+       - more human-readable report file names by default
+    - increased default log size (25MiB vs. 10MiB)
+    - support for forbidden path lists and forbid logging
+    - support for enabling plugins by kernel module name
+    - support for enabling plugins by executable name
+    - support for collecting eBPF (bpftool) data
+    - support for device information via add_udev_info()
+    - support for detecting and reporting unpackaged binaries
+    - optional collection of the RPMDB
+    - improved archive compression level and multithreading
+    - default log size increased from 10MiB to 25MiB
+    - improved debug logging and ENOSPC handling
+    - major updates to the IPA plugin
+    - major updates to the Docker plugin
+    - string decoding fixes
+    - DNF and Yum module support
+    - OpenShift 3.10 support
+    - Python3 fixes
+
+  Further release information and tarballs are available at:
+    https://github.com/sosreport/sos/releases/tag/3.6
+
+  * Debian specific modifications :
+    - Omit Python2 only unittests
+    - Avoid distutils in lstopo plugin
+
+  * Former debian modifications now fixed upstream:
+    - d/p/0002-reset-to-expected-variable-order-for-packagemanager.patch:
+    - d/p/0003-fix-name-containers-is-not-defined.patch:
+    - Fix-string-decoding-for-debug-log-output.patch
+
+ -- Louis Bouchard <louis@ubuntu.com>  Mon, 24 Sep 2018 09:24:07 +0000
+
+sosreport (3.5-1ubuntu4) cosmic; urgency=medium
+
+  * d/p/Fix-string-decoding-for-debug-log-output.patch:
+    Fix bug in _collect_strings that causes error trying to str.decode()
+    (LP: #1761442)
+
+ -- Dan Streetman <ddstreet@canonical.com>  Tue, 05 Jun 2018 10:52:56 -0400
+
+sosreport (3.5-1ubuntu3) bionic; urgency=medium
+
+  * Avoid using distutils during runtime.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 12 Apr 2018 10:48:13 +0200
+
+sosreport (3.5-1ubuntu2) bionic; urgency=medium
+
+  * d/p/0003-fix-name-containers-is-not-defined.patch:
+    "containers" is an unknown variable, "insp" is the correct one.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Mon, 15 Jan 2018 18:39:54 -0500
+
+sosreport (3.5-1ubuntu1) bionic; urgency=medium
+
+  * d/p/0002-reset-to-expected-variable-order-for-packagemanager.patch:
+    Fixing severe regression where many "packages = <PKG_NAME>" lines are no
+    longer working in Debian/Ubuntu. Preventing automatic package detection.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Tue, 05 Dec 2017 17:04:34 +0000
+
+sosreport (3.5-1) unstable; urgency=medium
+
+  * testNew upstream release v3.5
+    New Features include :
+        New plugins for :
+        * perl
+        * boom
+        * vdo
+        * os_net_config
+        * conntrackd
+        * ovirt_imageio
+        * nss
+        * sas3ircu
+        * openstack_aodh
+        * docker_distribution
+        * gluster_block
+        * snappy
+
+    Plugin API enhancements
+        * Plugin triggers by executable name
+        * Improved log size limit handling
+        * Better handling of compressed log files
+        * Per-plugin package verification lists
+
+    Updates to 227 plugins
+
+  * Debian modifications :
+    - Addition of DEP8 tests
+    - Do not run Python2 only tests
+
+ -- Louis Bouchard <louis@ubuntu.com>  Thu, 16 Nov 2017 12:53:34 +0100
+
+sosreport (3.4-1) unstable; urgency=medium
+
+  * New upstream release v3.4
+    New Features include :
+        New plugins for :
+        * virt-who
+        *  nodejs
+        *  npm
+        *  dracut
+        *  juju 2.0
+        *  grafana
+        *  nfsganesha
+        *  collectd
+        *  canonical_livepatch
+        *  jars
+        *  salt
+        *  saltmaster
+        *  storageconsole
+        *  gnocchi
+        *  crypto
+        *  azure/Red Hat
+        *  zfs
+        Plugin API enhancements
+        Internationalisation updates
+
+  * Debian modifications :
+    - Addition of DEP8 tests
+    - Do not run Python2 only tests
+    - d/p/0002-iscsi-Enable-plugin-for-Ubuntu-and-Debian.patch:
+      Take into account the iscsi initiator config and logs
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Wed, 05 Apr 2017 13:30:22 +0200
+
+sosreport (3.3+git50-g3c0349b-3) unstable; urgency=medium
+
+  * d/p/0003-iscsi-Enable-plugin-for-Ubuntu-and-Debian.patch:
+    Take into account the iscsi initiator config and logs (LP: #1605243)
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Thu, 16 Feb 2017 16:32:07 +0100
+
+sosreport (3.3+git50-g3c0349b-2) unstable; urgency=medium
+
+  * Fix sosreport displaying the wrong version number when
+    executed (Closes: #850922)
+  * Raise the standard version to 3.9.8
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Wed, 11 Jan 2017 10:43:37 +0100
+
+sosreport (3.3+git50-g3c0349b-1) unstable; urgency=medium
+
+  New release to allign to upstream release :
+    * make class method instance names consistent
+    * handle SIGTERM correctly in plugin setup()/collect() phases
+    * Mention python3 and update Ubuntu note.
+    * replace cluster plugin by dlm in sosreport help
+    * plugin tracebacks when net-tools not installed
+    * [sssd] Retrieve drop directory conf files
+    * [openstack_sahara] capture all sahara* sudoers files
+    * [systemd] Collect detailed runtime info on each unit
+    * [juju] Get Ready for 2.0 and make it less likely to get too much
+    * [dracut] add new plugin
+    * [insights] Update some verbiage and collect all log files.
+    * [docs] document use of --config with in-tree builds
+    * [docker] Gather more data and expand plugin options
+    * [osma] add omreport storage controller
+    * [atomichost] fix collection of 'docker info' output
+    *              improve 'atomic info' collection loop
+    *              replace custom logic with Policy.in_container()
+    *              fix option list style
+    * [grub2] grub2-mkconfig loads ext4 and brctl kernel modules
+    * [ceph] skip collecting of all keyring and bindpass files
+    * new plugin npm : get project modules and globally installed modules
+    * new plugin nodejs: get runtime info
+    * new plugin virtwho: for virt-who agent
+
+  Debian specific changes :
+    * Fix mknod error in systemd plugin when sosreport is running
+      in LXC containers
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Thu, 08 Dec 2016 12:37:48 +0100
+
+sosreport (3.3-1) unstable; urgency=medium
+
+  * New upstream release. This release includes a number of enhancements,
+    new features, and bug fixes, including:
+
+    - Support for OpenShift Enterprise 3.x
+    - Improved and expanded OpenStack plugins
+    - Enhanced support for Open vSwitch
+    - Enhanced Kubernetes data collection
+    - Improved support for systemd journal collection
+    - Policy support for the SuSE family of Linux distributions
+    - Policy support for the IBMKvm hypervisor distribution
+    - Enhanced display manager and 3D acceleration data capture
+    - Improved support for Linux clusters, including Pacemaker
+    - Expanded CPU and NUMA topology collection
+    - Expanded mainframe (s390x) coverage
+    - Collection of multipath topology
+
+  * Debian modifications :
+    - Addition of DEP8 tests
+    - Do not run Python2 only tests
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Tue, 05 Jul 2016 10:04:55 +0200
+
+sosreport (3.2+git276-g7da50d6-3) sid; urgency=medium
+
+  * Fix CVE-2015-7529 - predictable tmp files usage
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Thu, 10 Dec 2015 14:17:18 +0100
+
+sosreport (3.2+git276-g7da50d6-2) sid; urgency=medium
+
+  * Added comprehensive changelog for previous upload
+  * [activemq] - Honour all_logs and get config on RHEL
+  * [apache] - Added collection of conf.modules.d dir for httpd 2.4
+  * [apparmor] - Capture AppArmor profiles and status
+  * [apport] - Add information on specific crashes
+             - Move apport logging to apport plugin
+  * [atomic] - Add plugin for Atomic Host
+  * [block] - add 'blockdev --report'
+          - collect /proc/diskstats
+  * [boot] - Collect efibootmgr output
+  * [ceph] - add calamari-server and librados2 to the package list (upstream/pmoravec-ceph-update)
+         - add logs, report and calamari conf
+  * [chrony] - add chrony plugin
+  * [cluster] - add a couple pcs commands to the cluster plugin
+            - add luci to packages for standalone luci servers
+            - enable crm_report password scrubbing (upstream/sbradley-cluster_scrub_passwords)
+  * [corosync] - add postprocessing for corosync-objctl output
+  * [corosync/pacemaker] - Collect corosync-cfgtool -s output / add Pacemaker support
+  * [devices] - New plugin to collect "udevadm info --export-db"
+  * [docker] - add 'docker' to the package list for Red Hat distros
+             - use splitelines() for command output
+  * [docs] - add --chroot to sosreport.1
+           - add --experimental to sosreport.1
+           - Add prominent link to user focused docs
+           - add -s/--sysroot to sosreport.1
+           - fix documentation of --sysroot parameter
+           - update man page for new options
+  * [dpkg] - Collect debconf db, add verify and all logs options
+  * [etcd] - split etcd functionality from kubernetes into new plugin
+  * [firewalld] - work around command hangs in container environments
+  * [foreman] - Skip collection of generic resources
+  * [gdm] - add journalctl logs and systemctl status
+  * [general] - Better handling --name and --ticket-number in interactive mode
+  * [global] - make all utf-8 handling use errors='ignore'
+  * [infiniband] - add opensm and infiniband-diags support
+  * [iprconfig] - add plugin for IBM Power RAID adapters
+  * [iscsi] - get iscsiadm -m node -P 1 instead of -P 3
+  * [juju] - add generate-bundle option
+           - Update log collection to have limits
+  * [kernel] - collect directory listings for module updates
+             - collect /sys/firmware/acpi/*
+             - Collect clock source for all kernels
+  * [kimchi] - add new plugin
+  * [kubernetes] - add journal output for kube services
+                 - add services and pod logs collection
+                 - Change 'minions' to 'nodes'.
+                 - new plugin
+  * [landscape] - 15.01 moves logs files to landscape-server
+                - Collect landscape status
+                - Move landscape logs, add server support
+  * [last] - information about login actions
+  * [libvirt] - add listing of /var/lib/libvirt/qemu
+              - Collect XML files from /var/run/libvirt
+  * [lightdm] - add plugin
+  * [logs] - add to storage profile
+           - Implement all-logs, limits and small fixes.
+           - Remove passwords from rsyslog
+  * [manageiq] - New plugin for ManageIQ
+  * [memory] - add ksm, swap and vmallocinfo data to plugin
+             - collect swapon --show output in bytes
+  * [monit] - add new plugin for monit monitoring
+  * [mpt] - add plugin
+  * [mysql] - Collect log file (upstream/sbradley-mysql_config_file)
+            - improve handling of dbuser, dbpass and MYSQL_PWD
+            - obtain dbpass from the environment
+            - test for boolean values in user and password options
+  * [navicli] - catch exception if input is unreadable
+  * [networking] - add ethtool -d
+                 - additional ip, firewall and traffic shaping commands
+                 - brctl command is run when bridge kernel module is loaded only
+                 - Collect "ethtool -T $NIC"
+                 - Collect plotnetcfg output.
+                 - Enable the networking on debian based systems
+                 - gather per-namespace ip and ethtool data
+                 - improve readability of nmcli handling
+                 - iptables: check module version and do ipv6
+                 - nmcli status is obtained from the output
+                 - re-add 'ip addr' with a root symlink
+  * [ntp] - Collect "ntpq -p" output
+  * [openshift] - collect additional config files
+                - Obfuscate DNS plugin credentials
+                - Obfuscate only DNS plugin credential values
+  * [openstack] - Add new controller and compute profiles.
+                - Ensure openstack passwords and secrets are obfuscated.
+                - New Ironic plugin.
+                - New openstack_instack plugin.
+                - New Openstack Trove (DBaaS) plugin.
+  * [openstack_glance] - ensure class naming is consistent
+  * [openstack_heat] - ensure class naming is consistent
+  * [openstack_horizon] - Only use regex against configuration files
+                        - fix legacy component detection test (upstream/bmr-openstack_neutron-pkgcheck)
+                        - obfuscate server_auth in restproxy.ini
+                        - Obscure passwords and secrets
+  * [openstack_nova] - Limit log collection to .log files by default
+  * [openstack_sahara] - add new plugin
+                       - redact secrets from sahara configuration
+  * [openstack_swift] - capture all swift logs
+  * [openvswitch] - Capture additional output for OVS bridges.
+                  - capture the logs
+                  - dump and capture the database
+  * [ovirt] - Collect engine tunables and domain information.
+            - obfuscate passwords in aaa profiles
+            - remove ovirt-engine setup answer file password leak
+            - remove password leak from engine setup answer file
+            - remove password leak from ovirt-engine setup answer file
+  * [pci] - simplify lspci collection
+  * [pcp] - collect /etc/pcp.conf
+  * [rabbitmq] - Added cluster_status command output
+  * [policies] - add container support to Red Hat policy
+               - Add support for IBM PowerKVM/ZKVM platform
+               - run PackageManager query_command under timeout
+  * [policies/redhat] - add Red Hat Atomic Host policy
+  * [policies/redhat] - automatically set tmp_dir in containers
+  * [postgresql] - don't warn if dbname is not set
+  * [powerpc] - allow PowerPC plugin to run on ppc64le
+  * [process] - Collect few "ps" outputs
+              - collect /proc/sched_debug
+  * [ptp] - Add new plugin for Precision time protocol
+  * [puppet] - adding new plugin for puppet (upstream/sbradley-puppet-new_plugin)
+  * [qpid_dispatch] - add new plugin for Qpid Dispatch
+  * [rabbitmq] - Add list_policies output for the default virtual host.
+  * [saphana] - add SAP HANA plugin
+  * [sapnw] - Add check if saphostctrl is not present
+            - add SAP NetWeaver plugin
+            - add 'sapnw' as member of the 'sap' profile
+            - add sybase ASE collection
+  * [satellite] - remove explicit gathering of Tomcat info
+  * [selinux] - capture process SELinux domains
+              - fixfiles produces no useful output, use restorecon
+  * [services] - add "ls /var/lock/subsys"
+  * [sosreport] - add --chroot option
+                - add --sysroot option
+                - disable the 'zip' compression type
+                - log plugin exceptions to a file
+  * [sosreport,plugin] - add --experimental and ExperimentalPlugin tag
+  * [squid] - collect logs from /var/log/squid
+  * [startup] - rename plugin to 'services'
+  * [systemd] - Collect timedatectl for timezone
+              - Enable the plugin for Debian and Ubuntu
+  * [sysvipc] - Collect "ipcs -u"
+  * [targetcli] - add plugin
+  * [tomcat] - add support for tomcat7 and log size limits
+  * [tuned] - Collect additional configurations files and profiles. (upstream/sbradley-tuned_config_files)
+  * [unity] - new plugin to collect unity-support-status
+  * [vhostmd] - add new plugin
+              - add plugin to the system and virt profiles
+  * [virsh] - add new plugin
+  * [x11] - Add xrandr and glxinfo output
+  * [yum] - add output for yum history
+          - add subscription-manager identity output
+          - call rhsm-debug with --no-subscriptions
+          - split out subscription-manager into its own plugin
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Tue, 08 Dec 2015 15:52:02 +0100
+
+sosreport (3.2+git276-g7da50d6-1) sid; urgency=medium
+
+  * New release that brings in line sosreport with latest
+    upstream trunk (commit 7da50d6ee5afce577f02339fdc285891c8485bc0)
+  * Fix FTBS on debian
+    (Closes: ##805247)
+
+ -- Louis Bouchard <louis.bouchard@ubuntu.com>  Wed, 25 Nov 2015 14:59:15 +0100
+
+sosreport (3.2-1) unstable; urgency=medium
+
+  * Profiles for plugin selection
+  * Improved log size limiting
+  * File archiving enhancements and robustness improvements
+  * Global plugin options:
+        --verify, --log-size, --all-logs
+  * Better plugin descriptions
+  * Improved journalctl log capture
+  * PEP8 compliant code base
+  * oVirt support improvements
+  * New plugins: hpasm, ctdb, dbus, oVirt engine hosted,
+        MongoDB, ActiveMQ, OpenShift 2.0, MegaCLI, FCoE,
+        python, Ubuntu, NUMA, Team network driver
+
+ -- Adam Stokes <adam.stokes@ubuntu.com>  Sun, 12 Oct 2014 12:47:23 -0400
+
+sosreport (3.1-1) unstable; urgency=low
+
+  * New upstream release v3.1
+    Features include:
+    - Full Python 3 support
+    - Further modularized openstack plugins
+  * debian/rules:
+    - Use pybuild
+  * debian/control:
+    - Use X-Python-Version: >= 3.3
+
+ -- Adam Stokes <adam.stokes@ubuntu.com>  Wed, 15 Jan 2014 16:58:54 -0500
+
+sosreport (3.0-1) unstable; urgency=low
+
+  * New upstream release v3.0
+    Features include:
+    - Openstack, MAAS, Juju, and other cloud technologies
+    - Extended policies to allow for easier cross distribution support.
+    - Cross distribution support for Debian, Ubuntu, Fedora, and
+      Red Hat Enterprise Linux
+    - Increase execution speed of plugins
+  * Fixes traceback error in the utilities log (Closes: #717401)
+  * debian/copyright:
+    - Add Company contributions notices in AUTHORS file.
+  * setup.py:
+    - Added to support packaging python modules via distutils.
+  * debian/rules:
+    - Fix build instructions to package sosreport as a private module.
+  * debian/control:
+    - Use XS-Python-Version and remove debian/pyversions.
+  * tests/archive_tests.py:
+    - Update unittests to work with latest api changes in the new release.
+
+ -- Adam Stokes <adam.stokes@ubuntu.com>  Sun, 21 Jul 2013 20:35:04 -0400
+
+sosreport (2.3~git20130509-1) unstable; urgency=low
+
+  * Package updated from git rev 395ad13da8
+    Closes: #698329
+
+ -- Adam Stokes <adam.stokes@ubuntu.com>  Fri, 31 May 2013 12:12:46 -0400
