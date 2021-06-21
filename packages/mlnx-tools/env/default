@@ -1,6 +1,0 @@
-CLEAN=true
-DEBFULLNAME="Alexander Petrovskiy"
-DEBEMAIL="alexpe@nvidia.com"
-
-PKG_MLNX_TOOLS_GIT="https://github.com/Mellanox/mlnx-tools"
-PKG_MLNX_TOOLS_GIT_BRANCH="v5.1.3"

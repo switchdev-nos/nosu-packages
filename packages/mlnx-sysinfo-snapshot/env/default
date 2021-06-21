@@ -3,4 +3,4 @@ DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
 PKG_MLNX_SYSINFO_SNAPSHOT_GIT="https://github.com/Mellanox/linux-sysinfo-snapshot"
-PKG_MLNX_SYSINFO_SNAPSHOT_GIT_BRANCH="v3.6.1"
+PKG_MLNX_SYSINFO_SNAPSHOT_GIT_BRANCH="v3.6.5"

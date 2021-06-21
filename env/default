@@ -13,7 +13,6 @@ NOSU_PACKAGES=(
   hsflowd
   dropwatch
   mlnx-hw-mgmt
-  mlnx-tools
   mlnx-mft
   mlnx-firmware
   mlnx-sysinfo-snapshot

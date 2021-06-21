@@ -3,7 +3,7 @@ DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
 CLEAN=true
-PKG_IPROUTE2_VERSION="5.11.0"
+PKG_IPROUTE2_VERSION="5.12.0"
 #PKG_IPROUTE2_SNAPSHOT=""
-PKG_IPROUTE2_GIT="https://github.com/idosch/iproute2"
-PKG_IPROUTE2_GIT_BRANCH="submit/res_v1"
+PKG_IPROUTE2_GIT="https://git.kernel.org/pub/scm/network/iproute2/iproute2.git"
+PKG_IPROUTE2_GIT_BRANCH="v5.12.0"

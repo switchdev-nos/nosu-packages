@@ -3,4 +3,4 @@ DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
 PKG_MLNX_HW_MGMT_GIT="https://github.com/Mellanox/hw-mgmt"
-PKG_MLNX_HW_MGMT_GIT_BRANCH="V.7.0010.2000"
+PKG_MLNX_HW_MGMT_GIT_BRANCH="V.7.0010.3100"
