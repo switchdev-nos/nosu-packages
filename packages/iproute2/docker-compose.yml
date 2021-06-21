@@ -8,4 +8,3 @@ services:
       - ".:/mnt"
     working_dir: /mnt
     command: [ "/mnt/build.sh", "/mnt/${ENVFILE}" ]
-    network_mode: "host"

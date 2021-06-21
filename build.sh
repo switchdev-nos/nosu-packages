@@ -42,7 +42,7 @@ for pkg in "${NOSU_PACKAGES[@]}"; do
   echo "Building $pkg..."
   cat $PKGDIR/$pkg/env/default $ENVFILE > $PKGDIR/$pkg/env/build
   pushd $PKGDIR/$pkg
-  ./docker_build.sh ./env/build 
+  ./docker_build.sh ./env/build &
   popd
 done
 

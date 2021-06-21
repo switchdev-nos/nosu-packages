@@ -10,9 +10,9 @@ NOSU_PACKAGES=(
   mstpd
   vrf
   sosreport
-  hsflowd
-  dropwatch
+  i2c-tools
   mlnx-hw-mgmt
+  mlnx-tools
   mlnx-mft
   mlnx-firmware
   mlnx-sysinfo-snapshot

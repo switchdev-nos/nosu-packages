@@ -1,4 +1,3 @@
-FROM ubuntu:focal
+FROM ubuntu:bionic
 
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt -yqq update --no-install-recommends >/dev/null && apt install --no-install-recommends -yqq git curl tar gzip build-essential ca-certificates debhelper pkg-config libxtables-dev libip6tc-dev libip4tc-dev libipset-dev libglib2.0-dev libmagic-dev libmnl-dev libnftnl-dev libnl-3-dev libnl-genl-3-dev libnfnetlink-dev libpcre2-dev libsnmp-dev libssl-dev libjson-c-dev libpopt-dev libnl-nf-3-dev
+RUN apt -yqq update --no-install-recommends >/dev/null && apt install --no-install-recommends -yqq git curl tar gzip build-essential ca-certificates debhelper pkg-config iptables-dev libipset-dev libglib2.0-dev libmagic-dev libmnl-dev libnftnl-dev libnl-3-dev libnl-genl-3-dev libnfnetlink-dev libpcre2-dev libsnmp-dev libssl-dev libjson-c-dev libpopt-dev libnl-nf-3-dev

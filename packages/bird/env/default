@@ -3,7 +3,7 @@ DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
 CLEAN=true
-PKG_BIRD_VERSION="2.0.8"
+PKG_BIRD_VERSION="2.0.7"
 #PKG_BIRD_SNAPSHOT=""
 PKG_BIRD_GIT="https://gitlab.labs.nic.cz/labs/bird.git"
-PKG_BIRD_GIT_BRANCH="v2.0.8"
+PKG_BIRD_GIT_BRANCH="v2.0.7"

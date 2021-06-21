@@ -1,7 +1,0 @@
-CLEAN=true
-DEBFULLNAME="Alexander Petrovskiy"
-DEBEMAIL="alexpe@nvidia.com"
-
-PKG_DROPWATCH_GIT="https://github.com/nhorman/dropwatch"
-PKG_DROPWATCH_GIT_BRANCH=""
-#PKG_DROPWATCH_GIT_HASH=""
