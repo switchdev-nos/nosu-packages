@@ -2,7 +2,7 @@ Source: sosreport
 Maintainer: Eric Desrochers <slashd@ubuntu.com>
 Section: admin
 Priority: optional
-Standards-Version: 4.5.0
+Standards-Version: 4.5.1
 Build-Depends:
  debhelper-compat (= 12),
  dh-python,

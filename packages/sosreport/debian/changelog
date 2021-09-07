@@ -1,17 +1,67 @@
-sosreport (4.1-1ubuntu1.20.04.4) focal; urgency=medium
+sosreport (4.1-1ubuntu1) hirsute; urgency=medium
 
-  Update to upstream release 4.1
+  * New 4.1 upstream minor release.
+    - https://github.com/sosreport/sos/releases/tag/4.1
 
- -- Alexander Petrovskiy <alexpe@nvidia.com>  Wed, 10 Mar 2021 14:16:58 +0300
+  * d/test/simple.sh:
+    - Update the script from upstream
+    - Modify the script to use /tmp as a target, instead
+      of /var/tmp.
 
-sosreport (4.0-1~ubuntu0.20.04.4) focal; urgency=medium
+  * d/test/control:
+    - Adding isolation-machine as simple.sh wants to
+      interact with the kernel.
 
-  [Ponnuvel Palaniyappan]
-  * d/p/0011-ceph-include-time-sync-status-for-ceph-mon.patch:
-    - Ceph mons might get into time sync problems if ntp/chrony
-      isn't installed or configured correctly. Since Luminous
-      release, upstream support 'time-sync-status' to detect this
-      more easily. (LP: #1910264)
+  * Former patches:
+    - d/p/0002-fix-dict-order-py38-incompatibility.patch
+    - d/p/0003-sosclean-fix-handling-of-filepath-with-archive-name.patch
+    - d/p/0004-sosclean-fix-tarball-skipping-regex.patch
+    - d/p/0005-ceph-collect-balancer-and-pg-autoscale-status.patch
+    - d/p/0006-rabbitmq-add-info-on-maybe-stuck-processes.patch
+    - d/p/0007-rabbitmq-add-10sec-timeout-to-call-to-maybestuck.patch
+    - d/p/0008-networking-include-ip-neigh-and-rule-info.patch
+    - d/p/0009-conntrack-add-conntrack-info.patch
+    - d/p/0010-conntrack-gather-per-namespace-data.patch
+    - d/p/0011-ceph-include-time-sync-status-for-ceph-mon.patch
+    - d/p/0012-apt-move-unattended-upgrades-log-collection.patch
+    - d/p/0013-bcache-add-a-new-plugin-for-bcache.patch
+    - d/p/0014-k8s-add-cdk-master-auth-webhook-to-journal.patch
+    - d/p/0015-k8s-fix-cdk-related-file-paths.patch
+    - d/p/0016-systemd-prefer-resolvectl-over-systemd-resolve.patch
+    - d/p/0017-ovn-extend-information.patch
+    - d/p/0018-ua-prefer-new-ua-cmd-over-the-deprecated-one.patch
+    - d/p/0019-ovn-fix-sbctl-cmd-execution.patch
+
+  * Remaining patches:
+   - d/p/0001-debian-change-tmp-dir-location.patch
+
+  * New patches:
+   - d/p/0002-clean-prevent-parsing-ubuntu-user.patch
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Mon, 22 Mar 2021 12:19:59 +0000
+
+sosreport (4.0-1ubuntu9) hirsute; urgency=medium
+
+  [Edward Hope-Morley]
+  * d/p/0019-ovn-fix-sbctl-cmd-execution.patch (LP: #1916635)
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Wed, 24 Feb 2021 10:40:56 -0500
+
+sosreport (4.0-1ubuntu8) hirsute; urgency=medium
+
+  * d/p/0018-ua-prefer-new-ua-cmd-over-the-deprecated-one.patch
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Tue, 23 Feb 2021 08:49:59 -0500
+
+sosreport (4.0-1ubuntu7) hirsute; urgency=medium
+
+  [Edward Hope-Morley]
+  * d/p/0017-ovn-extend-information.patch (LP: #1915072)
+    - Extend ovn informations
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Thu, 11 Feb 2021 11:06:31 -0500
+
+sosreport (4.0-1ubuntu6) hirsute; urgency=medium
 
   [Eric Desrochers]
   * d/p/0012-apt-move-unattended-upgrades-log-collection.patch
@@ -30,32 +80,49 @@ sosreport (4.0-1~ubuntu0.20.04.4) focal; urgency=medium
   * d/p/0016-systemd-prefer-resolvectl-over-systemd-resolve.patch
     (LP: #1913581)
 
-  [Edward Hope-Morley]
-  * d/p/0017-ovn-extend-information.patch (LP: #1915072)
-    - Extend ovn informations
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Fri, 29 Jan 2021 12:20:50 -0500
 
- -- Eric Desrochers <eric.desrochers@canonical.com>  Tue, 16 Feb 2021 14:30:09 -0500
+sosreport (4.0-1ubuntu5) hirsute; urgency=medium
 
-sosreport (4.0-1~ubuntu0.20.04.3) focal; urgency=medium
+  [Ponnuvel Palaniyappan]
+  * d/p/0011-ceph-include-time-sync-status-for-ceph-mon.patch:
+    - Ceph mons might get into time sync problems if ntp/chrony
+      isn't installed or configured correctly. Since Luminous
+      release, upstream support 'time-sync-status' to detect this
+      more easily. (LP: #1910264)
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Tue, 05 Jan 2021 11:18:38 -0500
+
+sosreport (4.0-1ubuntu4) hirsute; urgency=medium
 
   [Hemanth Nakkina]
-  * d/p/0008-conntrack-add-conntrack-info.patch: rename the
+  * d/p/0009-conntrack-add-conntrack-info.patch: rename the
     conntrackd plugin to conntrack; add conntrack commands.
     (LP: #1898077)
 
   [Mauricio Oliveira]
-  * d/p/0009-conntrack-gather-per-namespace-data.patch: add
-    conntrack commands for network namespaces. 
-    (LP 1898077)
+  * d/p/0010-conntrack-gather-per-namespace-data.patch: add
+    conntrack commands for network namespaces.
+
+ -- Mauricio Faria de Oliveira <mfo@canonical.com>  Mon, 23 Nov 2020 15:10:12 -0300
+
+sosreport (4.0-1ubuntu3) hirsute; urgency=medium
 
   [Edward Hope-Morley]
-  * d/p/0010-networking-include-ns-ip-neigh-and-ip-rule-info.patch:
-    add ip neigh and ip rule commands for network namespaces.
-    (LP: #1901555)
+  * d/p/0008-networking-include-ip-neigh-and-rule-info.patch:
+    - Include ns ip neigh and ip rule info. (LP: #1901555)
 
- -- Mauricio Faria de Oliveira <mfo@canonical.com>  Tue, 29 Dec 2020 16:16:45 -0300
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Mon, 26 Oct 2020 11:04:41 -0400
 
-sosreport (4.0-1~ubuntu0.20.04.2) focal; urgency=medium
+sosreport (4.0-1ubuntu2) groovy; urgency=medium
+
+  [Nicolas Bock]
+  * d/p/0007-rabbitmq-add-10sec-timeout-to-call-to-maybestuck.patch:
+    - Add 10 second timeout to call to `maybe_stuck()`.
+
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Mon, 21 Sep 2020 10:47:11 -0400
+
+sosreport (4.0-1ubuntu1) groovy; urgency=medium
 
   [Eric Desrochers]
   * d/p/0003-sosclean-fix-handling-of-filepath-with-archive-name.patch:
@@ -74,38 +141,26 @@ sosreport (4.0-1~ubuntu0.20.04.2) focal; urgency=medium
   * d/p/0006-rabbitmq-add-info-on-maybe-stuck-processes.patch:
     - Add information on maybe_stuck() processes for RMQ. (LP: #1890846)
 
-  * d/p/0007-rabbitmq-add-10sec-timeout-to-call-to-maybestuck.patch:
-    - Add 10 second timeout to call to `maybe_stuck()`.
+ -- Eric Desrochers <eric.desrochers@canonical.com>  Fri, 18 Sep 2020 09:23:04 -0400
 
- -- Eric Desrochers <eric.desrochers@canonical.com>  Wed, 30 Sep 2020 14:29:50 -0400
+sosreport (4.0-1) unstable; urgency=medium
 
-sosreport (4.0-1~ubuntu0.20.04.1) focal; urgency=medium
-
-  * New 4.0 upstream release. (LP: #1892275)
+  * New 4.0 upstream release.
 
     Release information and tarballs are available at:
     - https://github.com/sosreport/sos/releases/tag/4.0
 
   * Other specific modifications:
     - d/p/0001-debian-change-tmp-dir-location.patch
-    - d/p/0002-fix-dict-order-py38-incompatibility.patch
+    - d/p/0002-fix-dict-order-py38-incompatiblity.patch
 
   * d/control: Maintainer change from Louis to Eric.
 
- -- Eric Desrochers <eric.desrochers@canonical.com>  Thu, 27 Aug 2020 13:59:51 +0000
+ -- Eric Desrochers <slashd@ubuntu.com>  Wed, 19 Aug 2020 22:49:24 +0000
 
-sosreport (3.9.1-1ubuntu0.20.04.2) focal; urgency=medium
+sosreport (3.9.1-1) unstable; urgency=medium
 
-  * d/p/0004-maas-add-snap-support.patch (LP: #1886494)
-    From 2.7.0 onwards, MAAS is using snaps for it's
-    releases, and this changes the location of files
-    and logs.
-
- -- Eric Desrochers <eric.desrochers@canonical.com>  Tue, 07 Jul 2020 19:19:09 +0000
-
-sosreport (3.9.1-1ubuntu0.20.04.1) focal; urgency=medium
-
-  * New 3.9.1 upstream release. (LP: #1884293) (LP: #1883320)
+  * New 3.9.1 upstream release.
     This maintenance release includes:
     - New plugins: sos_extras, ovirt_engine_backup, console,
       validation_framework.
@@ -127,44 +182,19 @@ sosreport (3.9.1-1ubuntu0.20.04.1) focal; urgency=medium
 
   * Former patches now fixed upstream:
     - d/p/0001-unittest-py3-fix.patch
-    - d/p/0002-lxd-drop-db-collection-and-introduce-lxd-buginfo.patch
 
   * Other specific modifications:
-    - d/p/0001-lshw-command.patch
-    - d/p/0002-lds-substitute-oidc-conf.patch
-    - d/p/0003-kvm-change-trigger-to-dev-kvm.patch
+    - Include simple.sh, an upstream port of the travis test to bash,
+      as part of the package autopkgtest.
 
  -- Eric Desrochers <slashd@ubuntu.com>  Tue, 16 Jun 2020 12:18:58 +0000
 
-sosreport (3.9-1ubuntu2.1) focal; urgency=low
-
-  * d/p/0003-lshw-command.patch: (LP: #1871494)
-    - Add `lshw` command to hardware plugin
-
-  [Eric Desrochers]
-  * d/p/0004-lds-substitute-oidc-conf.patch:
-    - landscape substitute oidc conf
-      in service file (LP: #1874526)
-
- -- Heather Lemon <heather.lemon@canonical.com>  Mon, 27 Apr 2020 09:33:16 -0600
-
-sosreport (3.9-1ubuntu2) focal; urgency=medium
-
-  * d/p/0002-lxd-drop-db-collection-and-introduce-lxd-buginfo.patch:
-    - Drop db collection and introduce lxd.buginfo (LP: #1868215)
-
-  * d/tests/{control,simple.sh}: (LP: #1865212)
-    - Add testsuite "simple.sh". A port of the travis tests to bash
-      provided by upstream.
-
- -- Seyeong Kim <seyeong.kim@canonical.com>  Fri, 20 Mar 2020 06:48:01 +0000
-
-sosreport (3.9-1ubuntu1) focal; urgency=medium
+sosreport (3.9-2) unstable; urgency=medium
 
   * debian/control:
     Drop accidentally re-introduces py2 runtime dependency
 
- -- Eric Desrochers <eric.desrochers@canonical.com>  Mon, 17 Feb 2020 07:28:29 -0500
+ -- Eric Desrochers <slashd@ubuntu.com>  Mon, 17 Feb 2020 12:50:37 +0000
 
 sosreport (3.9-1) unstable; urgency=medium
 

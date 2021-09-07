@@ -1,7 +1,6 @@
 CLEAN=true
 
 NOSU_PACKAGES=(
-  frr
   bird
   iproute2
   ethtool
@@ -10,9 +9,7 @@ NOSU_PACKAGES=(
   mstpd
   vrf
   sosreport
-  i2c-tools
   mlnx-hw-mgmt
-  mlnx-tools
   mlnx-mft
   mlnx-firmware
   mlnx-sysinfo-snapshot

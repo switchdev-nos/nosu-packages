@@ -2,7 +2,7 @@ CLEAN=true
 DEBFULLNAME="Alexander Petrovskiy"
 DEBEMAIL="alexpe@nvidia.com"
 
-PKG_MLNX_MFT_VERSION="4.16.3-12"
-PKG_MLNX_MFT_SNAPSHOT="https://www.mellanox.com/downloads/MFT/mft-4.16.3-12-x86_64-deb.tgz"
-KERNEL_VERSION="5.12.12"
+PKG_MLNX_MFT_VERSION="4.17.0-106"
+PKG_MLNX_MFT_SNAPSHOT="https://www.mellanox.com/downloads/MFT/mft-4.17.0-106-x86_64-deb.tgz"
+KERNEL_VERSION="5.14.1"
 KERNEL_LOCALVER="nosu"

@@ -15,6 +15,7 @@ sbin/rtmon
 sbin/ss /bin
 sbin/tc
 sbin/tipc
+sbin/dcb
 usr/lib/tc/
 usr/share/bash-completion/
 usr/share/man/

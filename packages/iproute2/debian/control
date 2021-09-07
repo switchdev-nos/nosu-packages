@@ -5,9 +5,9 @@ Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: Alexander Wirt <formorer@debian.org>
 Uploaders: Luca Boccassi <bluca@debian.org>
 Homepage: https://wiki.linuxfoundation.org/networking/iproute2
-Vcs-Browser: https://salsa.debian.org/debian/iproute2.git
+Vcs-Browser: https://salsa.debian.org/debian/iproute2
 Vcs-Git: https://salsa.debian.org/debian/iproute2.git
-Standards-Version: 4.5.0
+Standards-Version: 4.5.1
 Rules-Requires-Root: no
 Build-Depends: bison,
                debhelper (>= 10~),
